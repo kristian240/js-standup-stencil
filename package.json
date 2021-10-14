@@ -6,6 +6,8 @@
     "clean": "lerna clean --yes",
     "core:build": "lerna run --scope=core-components build",
     "core:start": "lerna run --scope=core-components start",
+    "react-components:build": "lerna run --scope=react-components build",
+    "react-components:start": "lerna run --scope=react-components start",
     "react:build": "lerna run --scope=react-app build",
     "react:start": "lerna run --scope=react-app start"
   },
