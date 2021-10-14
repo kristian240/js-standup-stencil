@@ -1,6 +1,10 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "core:build": "lerna run --scope=core-components build",
+    "core:start": "lerna run --scope=core-components start"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
   }
