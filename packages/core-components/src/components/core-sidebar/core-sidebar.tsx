@@ -20,17 +20,17 @@ export class CoreSidebar {
   expanded: boolean = false;
 
   @Method()
-  toggle() {
+  async toggle() {
     this.expanded = !this.expanded;
   }
 
   @Method()
-  expand() {
+  async expand() {
     this.expanded = true;
   }
 
   @Method()
-  collapse() {
+  async collapse() {
     this.expanded = false;
   }
 
