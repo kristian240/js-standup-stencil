@@ -1,0 +1,10 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+:host(:not([aria-expanded])) {
+  width: 64px;
+  overflow-x: hidden;
+}
