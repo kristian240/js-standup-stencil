@@ -5,7 +5,9 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
     "core:build": "lerna run --scope=core-components build",
-    "core:start": "lerna run --scope=core-components start"
+    "core:start": "lerna run --scope=core-components start",
+    "react:build": "lerna run --scope=react-app build",
+    "react:start": "lerna run --scope=react-app start"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
