@@ -2,6 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean --yes",
     "core:build": "lerna run --scope=core-components build",
     "core:start": "lerna run --scope=core-components start"
   },
