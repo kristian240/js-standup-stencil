@@ -9,7 +9,9 @@
     "react-components:build": "lerna run --scope=react-components build",
     "react-components:start": "lerna run --scope=react-components start",
     "react:build": "lerna run --scope=react-app build",
-    "react:start": "lerna run --scope=react-app start"
+    "react:start": "lerna run --scope=react-app start",
+    "angular:build": "lerna run --scope=react-app build",
+    "angular:start": "lerna run --scope=react-app start"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
