@@ -6,6 +6,15 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface CoreSidebar {
+        "collapse": () => Promise<void>;
+        "expand": () => Promise<void>;
+        /**
+          * Prop to define if sidebar is expanded or not
+         */
+        "expanded": boolean;
+        "toggle": () => Promise<void>;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +31,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCoreSidebarElement extends Components.CoreSidebar, HTMLStencilElement {
+    }
+    var HTMLCoreSidebarElement: {
+        prototype: HTMLCoreSidebarElement;
+        new (): HTMLCoreSidebarElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +44,17 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "core-sidebar": HTMLCoreSidebarElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface CoreSidebar {
+        /**
+          * Prop to define if sidebar is expanded or not
+         */
+        "expanded"?: boolean;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +70,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "core-sidebar": CoreSidebar;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +78,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "core-sidebar": LocalJSX.CoreSidebar & JSXBase.HTMLAttributes<HTMLCoreSidebarElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
